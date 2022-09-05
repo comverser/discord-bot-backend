@@ -43,11 +43,11 @@ const add = async (req: Request, res: Response) => {
 
     if (!discordUserId) {
         errors.message = "Not Found";
-        res.status(404).json({ hasAdded, errors });
+        return res.status(404).json({ hasAdded, errors });
     }
     if (MESHER_TOKEN !== process.env.MESHER_TOKEN) {
         errors.message = "Unauthorized";
-        res.status(401).json({ hasAdded, errors });
+        return res.status(401).json({ hasAdded, errors });
     }
 
     try {
