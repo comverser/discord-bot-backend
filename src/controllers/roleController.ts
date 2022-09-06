@@ -33,7 +33,7 @@ const AddRole = async (discordUserId: string) => {
         return { hasAdded: false, errors };
     }
 
-    return { hasAdded: true };
+    return { hasAdded: true, errors };
 };
 
 const add = async (req: Request, res: Response) => {
